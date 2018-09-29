@@ -1,0 +1,25 @@
+{
+  "name": "bootstrap-template",
+  "version": "1.0.0",
+  "description": "Template for making websites with Bootstrap 4 & common libraries",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sturmpl/bootstrap-template.git"
+  },
+  "author": "Hubert Rządziński",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sturmpl/bootstrap-template/issues"
+  },
+  "homepage": "https://github.com/Sturmpl/bootstrap-template#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.1"
+  }
+}
