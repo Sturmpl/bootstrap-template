@@ -2,6 +2,9 @@ let gulp = require('gulp');
 let browserSync = require('browser-sync');
 let sass = require('gulp-sass');
 let autoprefixer = require('gulp-autoprefixer');
+let cleanCSS = require('gulp-clean-css');
+//let uglify = require('gulp-uglify');
+let concat = require('gulp-concat');
 
 gulp.task('serve', ['sass'], function () {
     browserSync({
@@ -25,4 +28,12 @@ gulp.task('sass', function () {
         .pipe(browserSync.stream());
 });
 
+gulp.task('css', function () {
+    return gulp.src('src/css/**/*.css')
+        .pipe(concat('main.css'))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('dist/css'));
+})
+
+gulp.task('build', ['css']);
 gulp.task('default', ['serve']);
