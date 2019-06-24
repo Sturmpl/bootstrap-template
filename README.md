@@ -11,16 +11,18 @@ Template for quick entrance into making website with Bootstrap 4. Contains brows
 ```html
 git clone https://github.com/Sturmpl/bootstrap-template.git
 cd bootstrap-template
-npm init
+npm install
 ```
 
 ## Dependencies:
 ```json
-"devDependencies": {
+  "devDependencies": {
     "browser-sync": "^2.24.7",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1"
   }
 ```
 
