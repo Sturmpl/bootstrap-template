@@ -1,5 +1,5 @@
 # Bootstrap Template
-Template for quick entrance into making website with Bootstrap 4. Contains browser auto refresh on change in html/scss/js files & Sass preprocesssing.
+Template for quick entrance into making website with Bootstrap 4. 
 
 ## Made using:
 * [Bootstrap 4.3.1](http://getbootstrap.com/) & [jQuery 3.3.1](https://jquery.com/)
@@ -9,9 +9,16 @@ Template for quick entrance into making website with Bootstrap 4. Contains brows
 
 ## How to use
 ```html
+# Install:
 git clone https://github.com/Sturmpl/bootstrap-template.git
 cd bootstrap-template
 npm install
+
+# Start developing:
+gulp
+
+# Deploy:
+gulp build
 ```
 
 ## Dependencies:

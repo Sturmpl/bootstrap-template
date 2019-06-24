@@ -3,22 +3,22 @@ let browserSync = require('browser-sync');
 let sass = require('gulp-sass');
 let autoprefixer = require('gulp-autoprefixer');
 let cleanCSS = require('gulp-clean-css');
-//let uglify = require('gulp-uglify');
 let concat = require('gulp-concat');
 
-gulp.task('serve', ['sass'], function () {
+gulp.task('serve', ['sass'], () => {
     browserSync({
         server: 'src'
     });
-    gulp.watch('src/*.html',  function(){
+    gulp.watch('src/*.html', () => {
         browserSync.reload();
     });
     gulp.watch('src/scss/**/*.scss', ['sass']);
-    gulp.watch('src/js/**/*.js',  function(){
+    gulp.watch('src/js/**/*.js', () => {
         browserSync.reload();
     });
 });
-gulp.task('sass', function () {
+
+gulp.task('sass', () => {
     return gulp.src('src/scss/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
@@ -28,12 +28,17 @@ gulp.task('sass', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('css', function () {
+gulp.task('images', () => {
+    return gulp.src('src/img/**/*.{jpg,jpeg,png,gif,svg,webp}')
+        .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('css', () => {
     return gulp.src('src/css/**/*.css')
         .pipe(concat('main.css'))
         .pipe(cleanCSS())
         .pipe(gulp.dest('dist/css'));
-})
+});
 
-gulp.task('build', ['css']);
+gulp.task('build', ['css', 'images']);
 gulp.task('default', ['serve']);
